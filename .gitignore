@@ -1,0 +1,18 @@
+# Dependencies / build output — uploads to Substrait are source-only, <= 16 MB
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+
+# Env / local
+.env
+.env.local
+.env.*.local
+.DS_Store
+
+# Substrait link (created by /substrait:link)
+.substrait/
+
+# Local scratch
+scratchpad/

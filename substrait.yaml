@@ -1,0 +1,14 @@
+# REQUIRED. Recorded onto the app at each deploy and shown in the portal.
+description: >
+  Interactive new-employee onboarding for Ninja Van. A hub of guided
+  walkthrough modules that replaces static slide decks; the first module covers
+  the IT Policy — account and password rules, acceptable use of company
+  equipment, damage liability, and incident reporting — with inline interactive
+  elements (password checker, inactivity timeline, lost-device stepper, incident
+  matrix). Progress is stored in the browser. For new Ninja Van employees.
+
+# No database: this iteration keeps all progress in the browser's localStorage.
+# Add `database: oceanbase` here (plus Flyway migrations) if per-user progress or
+# an admin completion dashboard is needed later.
+
+# No backing services.

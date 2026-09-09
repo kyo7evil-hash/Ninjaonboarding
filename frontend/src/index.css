@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nv-red: #e1231a;
+  --nv-red-dark: #b71c15;
+  --nv-bg: #f4f5f7;
+  --nv-surface: #ffffff;
+  --nv-surface-2: #f9fafb;
+  --nv-border: #e5e7eb;
+  --nv-text: #1a1a1a;
+  --nv-text-muted: #5b6472;
+  --nv-ring: #e1231a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nv-red: #ff5449;
+    --nv-red-dark: #e1231a;
+    --nv-bg: #121316;
+    --nv-surface: #1c1e22;
+    --nv-surface-2: #23262b;
+    --nv-border: #34383f;
+    --nv-text: #f2f3f5;
+    --nv-text-muted: #9aa3b0;
+    --nv-ring: #ff5449;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--nv-bg);
+  color: var(--nv-text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Consistent, visible focus treatment for keyboard users. */
+:focus-visible {
+  outline: 3px solid var(--nv-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
