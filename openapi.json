@@ -1,0 +1,54 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Ninja Van Onboarding",
+    "version": "0.1.0",
+    "description": "Backend for the Ninja Van onboarding app. The onboarding walkthrough is a static SPA that stores its progress in the browser, so the backend exposes only health checks; it holds no data and has no business API."
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Liveness/readiness probe used by the platform.",
+        "operationId": "health",
+        "responses": {
+          "200": {
+            "description": "Service is up.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Health" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "summary": "Health check served under the /api prefix routed to the backend.",
+        "operationId": "api_health",
+        "responses": {
+          "200": {
+            "description": "Service is up.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Health" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Health": {
+        "type": "object",
+        "title": "Health",
+        "properties": {
+          "status": { "type": "string", "title": "Status" }
+        },
+        "required": ["status"]
+      }
+    }
+  }
+}
